@@ -7,7 +7,13 @@ return {
       flavour = "frappe",
       integrations = {
         alpha = true,
-        -- barbecue = true,
+        integrations = {
+          barbecue = {
+            dim_dirname = true,
+            bold_basename = true,
+            dim_context = false,
+          }
+        },
         dap = { enabled = true, enable_ui = true },
         harpoon = true,
         gitsigns = true,
