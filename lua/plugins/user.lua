@@ -5,7 +5,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      flavor = "frappe",
+      flavour = "frappe",
       integrations = {
         alpha = true,
         dap = { enabled = true, enable_ui = true },
@@ -28,5 +28,10 @@ return {
     opts = {
       colorscheme = "catppuccin",
     },
+  },
+
+  {
+    "Pocco81/auto-save.nvim",
+    opts = {},
   },
 }
