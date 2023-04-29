@@ -1,4 +1,19 @@
 return {
+
+  -- context
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      theme = "catppuccin",
+    },
+  },
+
+  -- statusline
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
@@ -75,19 +90,12 @@ return {
           },
           lualine_z = {
             { "filename", path = 0, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-            -- stylua: ignore
-            {
-              function() return require("nvim-navic").get_location() end,
-              cond = function()
-                return package.loaded["nvim-navic"] and
-                    require("nvim-navic").is_available()
-              end,
-            },
           },
         },
         extensions = { "neo-tree", "lazy" },
       }
     end,
   }
+
 
 }
