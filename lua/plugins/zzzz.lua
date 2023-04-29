@@ -7,17 +7,13 @@ return {
       { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
     },
     after = "catppuccin",
-    config = function()
-      require("bufferline").setup {
-        highlights = require("catppuccin.groups.integrations.bufferline").get()
-      }
-    end,
     opts = {
       options = {
         -- stylua: ignore
         close_command = function(n) require("mini.bufremove").delete(n, false) end,
         -- stylua: ignore
         right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
         diagnostics = "nvim_lsp",
         always_show_bufferline = false,
         diagnostics_indicator = function(_, _, diag)
@@ -37,16 +33,15 @@ return {
       },
     },
   },
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   name = "barbecue",
-  --   version = "*",
-  --   dependencies = {
-  --     "SmiteshP/nvim-navic",
-  --     "nvim-tree/nvim-web-devicons", -- optional dependency
-  --   },
-  --   opts = {
-  --     theme = "catppuccin",
-  --   },
-  -- }
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      theme = "catppuccin",
+    },
+  }
 }
