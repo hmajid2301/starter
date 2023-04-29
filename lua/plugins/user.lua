@@ -1,8 +1,7 @@
 return {
   -- add colortheme
   {
-    "hmajid2301/nvim-catppuccin",
-    branch = "add-alpha",
+    "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
     opts = {
@@ -17,6 +16,7 @@ return {
         semantic_tokens = true,
         symbols_outline = true,
         telescope = true,
+        lsp_trouble = true,
         which_key = true,
       }
     },
