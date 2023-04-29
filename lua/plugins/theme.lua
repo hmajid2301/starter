@@ -1,5 +1,4 @@
 return {
-  -- add colortheme
   {
     "catppuccin/nvim",
     lazy = true,
@@ -11,7 +10,6 @@ return {
         dap = { enabled = true, enable_ui = true },
         harpoon = true,
         gitsigns = true,
-        lualine = true,
         mason = true,
         neotree = true,
         neotest = true,
@@ -19,6 +17,8 @@ return {
         notify = true,
         semantic_tokens = true,
         symbols_outline = true,
+        treesitter = true,
+        treesitter_context = true,
         telescope = true,
         lsp_trouble = true,
         which_key = true,
@@ -35,7 +35,9 @@ return {
   },
 
   {
-    "Pocco81/auto-save.nvim",
-    opts = {},
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      theme = "catppuccin"
+    }
   },
 }
