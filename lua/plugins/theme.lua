@@ -34,10 +34,10 @@ return {
     },
   },
 
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = {
-      theme = "catppuccin"
-    }
-  },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   opts = {
+  --     theme = "catppuccin"
+  --   }
+  -- },
 }
