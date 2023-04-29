@@ -1,7 +1,7 @@
 local prefix = "<leader><leader>"
 return {
   -- disable leap
-  { "ggandor/leap.nvim", enabled = false },
+  { "ggandor/leap.nvim", keys = {} },
 
   {
     "kylechui/nvim-surround",

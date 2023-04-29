@@ -1,10 +1,11 @@
 return {
   {
     "Pocco81/auto-save.nvim",
-    opts = {},
+    opts = { debounce_delay = 5000 },
   },
   {
     "max397574/better-escape.nvim",
-    opts = {},
+    event = "InsertCharPre",
+    opts = { timeout = 300 },
   },
 }
