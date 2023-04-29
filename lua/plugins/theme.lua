@@ -33,11 +33,4 @@ return {
       colorscheme = "catppuccin",
     },
   },
-
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   opts = {
-  --     theme = "catppuccin"
-  --   }
-  -- },
 }
