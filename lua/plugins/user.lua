@@ -9,8 +9,12 @@ return {
       integrations = {
         alpha = true,
         dap = { enabled = true, enable_ui = true },
+        harpoon = true,
+        gitsigns = true,
+        lualine = true,
         mason = true,
         neotree = true,
+        neotest = true,
         noice = true,
         notify = true,
         semantic_tokens = true,
