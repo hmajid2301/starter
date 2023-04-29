@@ -1,5 +1,8 @@
 local prefix = "<leader><leader>"
 return {
+  -- disable leap
+  { "ggandor/leap.nvim", enabled = false },
+
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -15,16 +18,40 @@ return {
     },
     cmd = { "Harpoon" },
     keys = {
-      { prefix,        desc = "Harpoon" },
-      { prefix .. "a", function() require("harpoon.mark").add_file() end,        desc = "Add file" },
-      { prefix .. "e", function() require("harpoon.ui").toggle_quick_menu() end, desc = "Toggle quick menu" },
-      { "<C-j>",       function() require("harpoon.ui").nav_prev() end,          desc = "Goto previous mark" },
-      { "<C-k>",       function() require("harpoon.ui").nav_next() end,          desc = "Goto next mark" },
-      { prefix .. "m", "<cmd>Telescope harpoon marks<CR>",                       desc = "Show marks in Telescope" },
+      { prefix, desc = "Harpoon" },
+      {
+        prefix .. "a",
+        function()
+          require("harpoon.mark").add_file()
+        end,
+        desc = "Add file",
+      },
+      {
+        prefix .. "e",
+        function()
+          require("harpoon.ui").toggle_quick_menu()
+        end,
+        desc = "Toggle quick menu",
+      },
+      {
+        "<C-j>",
+        function()
+          require("harpoon.ui").nav_prev()
+        end,
+        desc = "Goto previous mark",
+      },
+      {
+        "<C-k>",
+        function()
+          require("harpoon.ui").nav_next()
+        end,
+        desc = "Goto next mark",
+      },
+      { prefix .. "m", "<cmd>Telescope harpoon marks<CR>", desc = "Show marks in Telescope" },
       {
         prefix .. "t",
         function()
-          local num = tonumber(vim.fn.input "GoTo terminal window number: ")
+          local num = tonumber(vim.fn.input("GoTo terminal window number: "))
           require("harpoon.term").gotoTerminal(num)
         end,
         desc = "Goto to terminal window",
@@ -32,11 +59,11 @@ return {
       {
         prefix .. "j",
         function()
-          local num = tonumber(vim.fn.input "GoTo Tmux window number: ")
+          local num = tonumber(vim.fn.input("GoTo Tmux window number: "))
           require("harpoon.tmux").gotoTerminal(num)
         end,
         desc = "Goto to TMUX tmux window",
       },
     },
-  }
+  },
 }

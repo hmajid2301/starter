@@ -1,5 +1,5 @@
 return {
-	"aserowy/tmux.nvim",
-	opts = {},
-	event = "User AstroFile"
+  "aserowy/tmux.nvim",
+  opts = {},
+  event = "VimEnter",
 }
