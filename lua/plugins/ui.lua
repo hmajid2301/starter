@@ -5,13 +5,39 @@ return {
   --   "akinsho/bufferline.nvim",
   --   dependencies = { "catppuccin" },
   --   config = function()
-  --     require("bufferline").setup {
-  --       highlights = require("catppuccin.groups.integrations.bufferline").get()
-  --     }
-  --   end
+  --     require("bufferline").setup({
+  --       highlights = require("catppuccin.groups.integrations.bufferline").get(),
+  --     })
+  --   end,
   -- },
 
-  -- context
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_by_name = {
+            ".git",
+            "node_modules",
+          },
+        },
+      },
+      default_component_configs = {
+        git_status = {
+          symbols = {
+            untracked = "★",
+            ignored = "◌",
+            unstaged = "✗",
+            staged = "✓",
+          },
+        },
+      },
+    },
+  },
+
+  --context(
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -36,14 +62,14 @@ return {
         options = {
           theme = "catppuccin",
           globalstatus = true,
-          section_separators = { left = '', right = '' },
+          section_separators = { left = "", right = "" },
           disabled_filetypes = { statusline = { "dashboard", "alpha" } },
         },
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
           lualine_c = {
-            { "progress", separator = " ",                  padding = { left = 1, right = 0 } },
+            { "progress", separator = " ", padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
             {
               "diagnostics",
@@ -80,7 +106,7 @@ return {
             {
               require("lazy.status").updates,
               cond = require("lazy.status").has_updates,
-              color = Util.fg("Special")
+              color = Util.fg("Special"),
             },
             {
               "diff",
@@ -96,7 +122,9 @@ return {
               "filetype",
               separator = "",
               padding = {
-                left = 1, right = 1 }
+                left = 1,
+                right = 1,
+              },
             },
           },
           lualine_z = {
@@ -106,7 +134,5 @@ return {
         extensions = { "neo-tree", "lazy" },
       }
     end,
-  }
-
-
+  },
 }

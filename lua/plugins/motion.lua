@@ -1,13 +1,12 @@
 local prefix = "<leader><leader>"
 return {
   -- disable leap
-  { "ggandor/leap.nvim", keys = {} },
-
   {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    opts = {},
+    "ggandor/leap.nvim",
+    keys = function()
+      return {}
+    end,
+    config = function() end,
   },
 
   {
