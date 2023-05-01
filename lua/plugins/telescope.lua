@@ -1,6 +1,6 @@
 return {
   {
-    "telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -13,26 +13,11 @@ return {
       "debugloop/telescope-undo.nvim",
     },
     opts = function(_, opts)
-      local actions = require("telescope.actions")
-      local trouble = require("trouble.providers.telescope")
-
-      return vim.list_extend(opts, {
-        extensions = {
-          zoxide = {
-            prompt_title = " Projects List",
-          },
+      opts.extensions = {
+        zoxide = {
+          prompt_title = " Projects List",
         },
-        mappings = {
-          i = {
-            ["<c-t>"] = trouble.open_with_trouble,
-            ["<C-n>"] = actions.cycle_history_next,
-            ["<C-p>"] = actions.cycle_history_prev,
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-          },
-          n = { ["<c-t>"] = trouble.open_with_trouble },
-        },
-      })
+      }
     end,
   },
 }
