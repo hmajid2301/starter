@@ -22,11 +22,6 @@ return {
     end,
   },
   {
-    "RRethy/vim-illuminate",
-    event = "User FileOpened",
-    opts = {},
-  },
-  {
     "echasnovski/mini.splitjoin",
     main = "mini.splitjoin",
     keys = {

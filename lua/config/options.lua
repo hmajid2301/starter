@@ -7,3 +7,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.colorcolumn = "120"
 vim.opt.swapfile = false
+
+-- Highlight groups for illuminate
+vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
