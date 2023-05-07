@@ -1,15 +1,16 @@
 return {
 
-  -- -- bufferline
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   dependencies = { "catppuccin" },
-  --   config = function()
-  --     require("bufferline").setup({
-  --       highlights = require("catppuccin.groups.integrations.bufferline").get(),
-  --     })
-  --   end,
-  -- },
+  -- bufferline
+  {
+    "akinsho/bufferline.nvim",
+    dependencies = { "catppuccin" },
+    event = "VeryLazy",
+    config = function()
+      require("bufferline").setup({
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
+      })
+    end,
+  },
 
   {
     "nvim-neo-tree/neo-tree.nvim",

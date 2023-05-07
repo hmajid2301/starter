@@ -10,11 +10,9 @@ vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without updating regist
 -- Copy
 vim.keymap.set("v", "<", "<gv", { desc = "Stay in visual mode during outdent" })
 vim.keymap.set("v", ">", ">gv", { desc = "Stay in visual mode during indent" })
-vim.keymap.set("v", "J", ":m >+1<CR>gv=gv", { desc = "Mouse selected lines down" })
-vim.keymap.set("v", "K", ":m >-2<CR>gv=gv", { desc = "Mouse selected lines up" })
 
 -- Buffers
-vim.keymap.set("n", "<leader>bca", ":%bd|e#", { desc = "Close all buffes except current one" })
+vim.keymap.set("n", "<leader>bca", "<cmd>%bd|e#<cr>", { desc = "Close all buffes except current one" })
 
 -- Navigation
 vim.keymap.set(
@@ -24,8 +22,6 @@ vim.keymap.set(
   { desc = "Change directory using zoxide" }
 )
 vim.keymap.set("n", "<leader>uu", "<cmd>Telescope undo<cr>", { desc = "Show undoo tree" })
--- vim.keymap.set("n", "<A-H>", "^", { desc = "Move to first character in line" })
--- vim.keymap.set("n", "<A-L>", "$", { desc = "Move to last character in line" })
 
 -- Keep matches center screen when cycling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Keep cursor in middle when jumping" })
@@ -41,7 +37,6 @@ end, { desc = "Toggle: Go Disk Usage" })
 vim.keymap.set("n", "<leader>tu", function()
   Util.float_term({ "btm" }, { cwd = Util.get_root(), esc_esc = false })
 end, { desc = "Toggle: Bottom" })
-
 vim.keymap.set("n", "<A-J>", "mzJ`z", { desc = "combine with line up" })
 
 -- Newlines
@@ -64,3 +59,8 @@ map("n", "<C-h>", "<cmd>lua require'tmux'.move_left()<cr>", { desc = "Go to left
 map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lower window" })
 map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
 map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
+
+map("n", "<S-h>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Resize pane left" })
+map("n", "<S-j>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Resize pane down" })
+map("n", "<S-k>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Resize pane up" })
+map("n", "<S-l>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Resize pane right" })
