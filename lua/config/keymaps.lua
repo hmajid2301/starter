@@ -13,6 +13,9 @@ vim.keymap.set("v", ">", ">gv", { desc = "Stay in visual mode during indent" })
 vim.keymap.set("v", "J", ":m >+1<CR>gv=gv", { desc = "Mouse selected lines down" })
 vim.keymap.set("v", "K", ":m >-2<CR>gv=gv", { desc = "Mouse selected lines up" })
 
+-- Buffers
+vim.keymap.set("n", "<leader>bca", ":%bd|e#", { desc = "Close all buffes except current one" })
+
 -- Navigation
 vim.keymap.set(
   "n",
@@ -21,8 +24,8 @@ vim.keymap.set(
   { desc = "Change directory using zoxide" }
 )
 vim.keymap.set("n", "<leader>uu", "<cmd>Telescope undo<cr>", { desc = "Show undoo tree" })
-vim.keymap.set("n", "<C-H>", "^", { desc = "Move to first character in line" })
-vim.keymap.set("n", "<C-L>", "$", { desc = "Move to last character in line" })
+-- vim.keymap.set("n", "<A-H>", "^", { desc = "Move to first character in line" })
+-- vim.keymap.set("n", "<A-L>", "$", { desc = "Move to last character in line" })
 
 -- Keep matches center screen when cycling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Keep cursor in middle when jumping" })
