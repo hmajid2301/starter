@@ -14,13 +14,7 @@ vim.keymap.set("v", ">", ">gv", { desc = "Stay in visual mode during indent" })
 -- Buffers
 vim.keymap.set("n", "<leader>bca", "<cmd>%bd|e#<cr>", { desc = "Close all buffes except current one" })
 
--- Navigation
-vim.keymap.set(
-  "n",
-  "<leader>zz",
-  require("telescope").extensions.zoxide.list,
-  { desc = "Change directory using zoxide" }
-)
+-- Telescope
 vim.keymap.set("n", "<leader>uu", "<cmd>Telescope undo<cr>", { desc = "Show undoo tree" })
 
 -- Keep matches center screen when cycling
