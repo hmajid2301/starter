@@ -12,7 +12,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "Stay in visual mode during outdent" })
 vim.keymap.set("v", ">", ">gv", { desc = "Stay in visual mode during indent" })
 
 -- Buffers
-vim.keymap.set("n", "<leader>bca", "<cmd>%bd|e#<cr>", { desc = "Close all buffes except current one" })
+vim.keymap.set("n", "<leader>bda", "<cmd>%bd|e#<cr>", { desc = "Close all buffes except current one" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>uu", "<cmd>Telescope undo<cr>", { desc = "Show undoo tree" })
