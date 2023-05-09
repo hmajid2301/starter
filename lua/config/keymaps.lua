@@ -12,7 +12,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "Stay in visual mode during outdent" })
 vim.keymap.set("v", ">", ">gv", { desc = "Stay in visual mode during indent" })
 
 -- Buffers
-vim.keymap.set("n", "<leader>bda", "<cmd>%bd|e#<cr>", { desc = "Close all buffes except current one" })
+vim.keymap.set("n", "<leader>bca", "<cmd>%bd|e#<cr>", { desc = "Close all buffes except current one" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>uu", "<cmd>Telescope undo<cr>", { desc = "Show undoo tree" })
@@ -54,7 +54,15 @@ map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lo
 map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
 map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
 
-map("n", "<S-h>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Resize pane left" })
-map("n", "<S-j>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Resize pane down" })
-map("n", "<S-k>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Resize pane up" })
-map("n", "<S-l>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Resize pane right" })
+map("n", "<A-h>", "<cmd>lua require'tmux'.resize_left()<cr>", { desc = "Resize pane left" })
+map("n", "<A-j>", "<cmd>lua require'tmux'.resize_bottom()<cr>", { desc = "Resize pane down" })
+map("n", "<A-k>", "<cmd>lua require'tmux'.resize_top()<cr>", { desc = "Resize pane up" })
+map("n", "<A-l>", "<cmd>lua require'tmux'.resize_right()<cr>", { desc = "Resize pane right" })
+
+-- Move Lines (overwrite lazy vim)
+map("n", "<S-A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<S-A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<S-A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<S-A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<S-A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<S-A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
