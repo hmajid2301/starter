@@ -66,3 +66,16 @@ map("i", "<S-A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
 map("i", "<S-A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<S-A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<S-A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Telekasten
+
+vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten panel<CR>")
+vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
+vim.keymap.set("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
+vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
+vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
+vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
+vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
+vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
+vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
+vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
