@@ -1,6 +1,7 @@
 return {
 
   -- bufferline
+  -- TODO: fix this
   {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
