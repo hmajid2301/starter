@@ -30,23 +30,22 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
+    opts = {
+      ensure_installed = {
         "golangci_lint_ls",
         "gopls",
         "jsonls",
         "lua_ls",
         "tsserver",
-      })
-    end,
+      },
+    },
   },
 
   {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      vim.list_extend(opts.ensure_installed, {
+    opts = {
+      ensure_installed = {
         "eslint_d",
         "flake8",
         "golangci-lint",
@@ -54,8 +53,8 @@ return {
         "goimports",
         "shfmt",
         "stylua",
-      })
-    end,
+      },
+    },
   },
 
   {
