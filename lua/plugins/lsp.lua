@@ -6,6 +6,22 @@ return {
     end,
   },
   {
+    "SmiteshP/nvim-navbuddy",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+      "nvim-telescope/telescope.nvim", -- Optional
+    },
+    cmd = "Navbuddy",
+    opts = {
+      use_default_mappings = true,
+    },
+    keys = {
+      { "<leader>fnb", "<CMD>Navbuddy<CR>", desc = "Open NavBuddy" },
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",

@@ -4,7 +4,7 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim", "renerocksai/calendar-vim" },
     cmd = { "Telekasten" },
     keys = {
-      { "<leader>nn", "<cmd>Telekasten pnael<cr>", desc = "open panek" },
+      { "<leader>nn", "<cmd>Telekasten panel<cr>", desc = "open panel" },
       { "<leader>nb", "<cmd>Telekasten show_backlink<cr>", desc = "backlinks" },
       { "<leader>nf", "<cmd>Telekasten find_notes<cr>", desc = "find" },
       { "<leader>ng", "<cmd>Telekasten follow_link<cr>", desc = "goto link" },
