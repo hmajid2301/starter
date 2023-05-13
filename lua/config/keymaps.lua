@@ -31,7 +31,11 @@ end, { desc = "Toggle: Go Disk Usage" })
 vim.keymap.set("n", "<leader>tu", function()
   Util.float_term({ "btm" }, { cwd = Util.get_root(), esc_esc = false })
 end, { desc = "Toggle: Bottom" })
-vim.keymap.set("n", "<A-J>", "mzJ`z", { desc = "combine with line up" })
+vim.keymap.set("n", "<leader>tr", function()
+  Util.float_term({ "ranger" }, { cwd = Util.get_root(), esc_esc = false })
+end, { desc = "Toggle ranger" })
+
+-- vim.keymap.set("n", "<A-J>", "mzJ`z", { desc = "combine with line up" })
 
 -- Newlines
 vim.keymap.set("n", "<leader>o", 'o<Esc>0"_D', { desc = "Create a new line below without leaving normal mode" })
