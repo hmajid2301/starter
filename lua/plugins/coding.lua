@@ -1,10 +1,4 @@
 return {
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   keys = function()
-  --     return {}
-  --   end,
-  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -40,6 +34,21 @@ return {
     },
     opts = {
       mappings = { toggle = "" },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = { -- optional packages
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-go",
+      "nvim-neotest/neotest-python",
+      "marilari88/neotest-vitest",
+    },
+    opts = {
+      goimport = "goimport",
+      gofmt = "goimports",
     },
   },
 }

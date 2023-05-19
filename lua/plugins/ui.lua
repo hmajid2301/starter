@@ -1,15 +1,45 @@
 return {
 
-  -- -- bufferline
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   dependencies = { "catppuccin" },
-  --   config = function()
-  --     require("bufferline").setup({
-  --       highlights = require("catppuccin.groups.integrations.bufferline").get(),
-  --     })
-  --   end,
-  -- },
+  -- bufferline
+  -- TODO: fix this
+  {
+    "akinsho/bufferline.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
+      { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
+    },
+    dependencies = { "catppuccin" },
+    config = function()
+      require("bufferline").setup({
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
+      })
+    end,
+    opts = {
+      options = {
+      -- stylua: ignore
+      close_command = function(n) require("mini.bufremove").delete(n, false) end,
+      -- stylua: ignore
+      right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+        diagnostics = "nvim_lsp",
+        always_show_bufferline = false,
+        diagnostics_indicator = function(_, _, diag)
+          local icons = require("lazyvim.config").icons.diagnostics
+          local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+            .. (diag.warning and icons.Warn .. diag.warning or "")
+          return vim.trim(ret)
+        end,
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "Neo-tree",
+            highlight = "Directory",
+            text_align = "left",
+          },
+        },
+      },
+    },
+  },
 
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -87,7 +117,7 @@ return {
               function() return require("noice").api.status.command.get() end,
               cond = function()
                 return package.loaded["noice"] and
-                    require("noice").api.status.command.has()
+                  require("noice").api.status.command.has()
               end,
               color = Util.fg("Statement"),
             },
@@ -102,11 +132,6 @@ return {
               function() return "  " .. require("dap").status() end,
               cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
               color = Util.fg("Debug"),
-            },
-            {
-              require("lazy.status").updates,
-              cond = require("lazy.status").has_updates,
-              color = Util.fg("Special"),
             },
             {
               "diff",
